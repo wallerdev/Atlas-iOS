@@ -279,10 +279,16 @@ typedef NS_ENUM(NSUInteger, ATLAvatarItemDisplayFrequency) {
 @property (nonatomic) BOOL shouldDisplayAvatarItemForOneOtherParticipant;
 
 /**
- @abstract A Boolean value that determines whether or not an avatar is shown next to the outgoing messages
+ @abstract A Boolean value that determines whether or not an avatar is shown next to the outgoing messages.
  @default `NO`.
  */
 @property (nonatomic) BOOL shouldDisplayAvatarItemForAuthenticatedUser;
+
+/**
+ @abstract A Boolean value that determines whether receipts should be shown.
+ @default `YES`.
+ */
+@property (nonatomic) BOOL shouldDisplayReceipts;
 
 /**
  @abstract An Enum value that determines how often avatar items should be shown next to messages.

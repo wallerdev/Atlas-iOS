@@ -107,6 +107,7 @@ static NSInteger const ATLPhotoActionSheet = 1000;
     _marksMessagesAsRead = YES;
     _shouldDisplayAvatarItemForOneOtherParticipant = NO;
     _shouldDisplayAvatarItemForAuthenticatedUser = NO;
+    _shouldDisplayReceipts = YES;
     _avatarItemDisplayFrequency = ATLAvatarItemDisplayFrequencySection;
     _typingParticipantIDs = [NSMutableOrderedSet new];
     _sectionHeaders = [NSHashTable weakObjectsHashTable];
@@ -495,6 +496,7 @@ static NSInteger const ATLPhotoActionSheet = 1000;
 
 - (BOOL)shouldDisplayReadReceiptForSection:(NSUInteger)section
 {
+    if (!self.shouldDisplayReceipts) return NO;
     // Only show read receipt if last message was sent by currently authenticated user
     NSInteger lastQueryControllerRow = [self.conversationDataSource.queryController numberOfObjectsInSection:0] - 1;
     NSInteger lastSection = [self.conversationDataSource collectionViewSectionForQueryControllerRow:lastQueryControllerRow];
