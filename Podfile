@@ -4,16 +4,18 @@ platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'git@github.com:layerhq/cocoapods-specs.git'
 
+layerkit_framework_path = '~/Dropbox/Layer/Builds/iOS/LayerKit-0.17.0-pre5'
+
 use_frameworks!
 
 target 'Programmatic' do
   pod 'Atlas', path: '.'
-  pod 'LayerKit', :git => 'git@github.com:layerhq/LayerKit.git'
+  pod 'LayerKit', path: "#{layerkit_framework_path}"
 end
 
 target 'Storyboard' do
   pod 'Atlas', path: '.'
-  pod 'LayerKit', :git => 'git@github.com:layerhq/LayerKit.git'
+  pod 'LayerKit', path: "#{layerkit_framework_path}"
 end
 
 target 'ProgrammaticTests' do
@@ -22,6 +24,7 @@ target 'ProgrammaticTests' do
   pod 'KIF'
   pod 'Expecta'
   pod 'OCMock'
+  pod 'LayerKit', path: "#{layerkit_framework_path}"
 end
 
 target 'StoryboardTests' do
@@ -30,9 +33,11 @@ target 'StoryboardTests' do
   pod 'KIF'
   pod 'Expecta'
   pod 'OCMock'
+  pod 'LayerKit', path: "#{layerkit_framework_path}"
 end
 
 target 'UnitTests' do
   pod 'Expecta'
   pod 'OCMock'
+  pod 'LayerKit', path: "#{layerkit_framework_path}"
 end
