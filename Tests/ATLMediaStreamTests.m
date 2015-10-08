@@ -21,7 +21,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "ATLMediaInputStream.h"
+#import <Atlas/ATLMediaInputStream.h>
 #import "ATLTestUtilities.h"
 
 #define EXP_SHORTHAND

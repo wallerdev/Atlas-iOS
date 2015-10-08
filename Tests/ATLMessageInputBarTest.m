@@ -22,8 +22,6 @@
 #import <XCTest/XCTest.h>
 #import "ATLTestInterface.h"
 #import "ATLSampleConversationViewController.h"
-#import "ATLMediaAttachment.h"
-#import "ATLConstants.h"
 #import "ATLTestUtilities.h"
 
 @interface ATLConversationViewController ()

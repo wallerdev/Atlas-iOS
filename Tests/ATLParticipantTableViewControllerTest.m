@@ -20,8 +20,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "ATLTestInterface.h"
-#import "ATLParticipantTableViewCell.h"
-#import "ATLParticipant.h"
+#import <Atlas/ATLParticipantTableViewCell.h>
+#import <Atlas/ATLParticipant.h>
 #import "ATLSampleParticipantTableViewController.h"
 
 @interface ATLParticipantTableViewCell ()

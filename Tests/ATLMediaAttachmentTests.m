@@ -21,7 +21,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "ATLMediaAttachment.h"
+#import <Atlas/ATLMediaAttachment.h>
 #import "ATLTestUtilities.h"
 #import "ATLMediaInputStream.h"
 
