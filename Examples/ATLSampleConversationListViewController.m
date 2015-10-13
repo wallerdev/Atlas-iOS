@@ -47,6 +47,7 @@
     [self.tableView reloadData];
 }
 
+
 - (void)handleNewTap
 {
     ATLSampleConversationViewController *controller = [ATLSampleConversationViewController conversationViewControllerWithLayerClient:self.layerClient];

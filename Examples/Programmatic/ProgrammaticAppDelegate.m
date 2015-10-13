@@ -24,20 +24,19 @@ static BOOL ATLIsRunningTests()
 @implementation ProgrammaticAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
-    ATLUserMock *mockUser = [ATLUserMock userWithMockUserName:ATLMockUserNameBlake];
-    LYRClientMock *layerClient = [LYRClientMock layerClientMockWithAuthenticatedUserID:mockUser.participantIdentifier];
-    [[LYRMockContentStore sharedStore] hydrateConversationsForAuthenticatedUserID:layerClient.authenticatedUserID count:1];
-    
+{
     UIViewController *controller;
     if (ATLIsRunningTests()) {
         controller = [UIViewController new];
     } else {
+        ATLUserMock *mockUser = [ATLUserMock userWithMockUserName:ATLMockUserNameBlake];
+        LYRClientMock *layerClient = [LYRClientMock layerClientMockWithAuthenticatedUserID:mockUser.participantIdentifier];
+        [[LYRMockContentStore sharedStore] hydrateConversationsForAuthenticatedUserID:layerClient.authenticatedUserID count:1];
+        
         controller = [ATLSampleConversationListViewController conversationListViewControllerWithLayerClient:(LYRClient *)layerClient];
         controller.view.backgroundColor = [UIColor whiteColor];
     }
     UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];

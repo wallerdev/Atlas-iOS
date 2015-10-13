@@ -44,6 +44,7 @@ typedef NS_ENUM(NSUInteger, ATLMockUserName){
 @property (nonatomic) NSString *fullName;
 @property (nonatomic) UIImage *avatarImage;
 @property (nonatomic) NSURL *avatarImageURL;
+@property (nonatomic) NSString *avatarInitials;
 @property (nonatomic) NSString *participantIdentifier;
 
 /**

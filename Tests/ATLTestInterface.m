@@ -21,6 +21,7 @@
 #import "ATLTestInterface.h"
 #import "ProgrammaticAppDelegate.h"
 #import "LYRMessagePartMock.h"
+#import <LYRCountDownLatch/LYRCountDownLatch.h>
 
 #pragma mark - Message Parts Constructors
 
@@ -127,15 +128,22 @@ LYRMessagePartMock *ATLMessagePartWithLocation(CLLocation *location)
 
 - (void)presentViewController:(UIViewController *)controller
 {
-    ProgrammaticAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    delegate.window.rootViewController = navigationController;
+    ProgrammaticAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    __block LYRCountDownLatch *latch = [LYRCountDownLatch latchWithCount:1 timeoutInterval:10];
+    [delegate.window.rootViewController presentViewController:navigationController animated:NO completion:^{
+        [latch decrementCount];
+    }];
+    [latch waitTilCount:0];
 }
 
 - (void)dismissPresentedViewController
 {
     ProgrammaticAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    delegate.window.rootViewController = nil;
+    if (delegate.window.rootViewController.presentedViewController) {
+        [delegate.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

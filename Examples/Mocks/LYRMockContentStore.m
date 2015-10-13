@@ -21,9 +21,9 @@
 
 @interface LYRMockContentStore ()
 
-@property (nonatomic) NSMutableSet *conversations;
-@property (nonatomic) NSMutableSet *messages;
-@property (nonatomic) NSMutableArray *mockObjectChanges;
+@property (nonatomic, strong) NSMutableSet *conversations;
+@property (nonatomic, strong) NSMutableSet *messages;
+@property (nonatomic, strong) NSMutableArray *mockObjectChanges;
 
 @end
 
