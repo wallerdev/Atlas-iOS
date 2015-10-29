@@ -20,17 +20,17 @@
 
 #import <Foundation/Foundation.h>
 
-UIColor *ATLBlueColor();
+UIColor *ATLBlueColor(void);
 
-UIColor *ATLDarkGrayColor();
+UIColor *ATLDarkGrayColor(void);
 
-UIColor *ATLGrayColor();
+UIColor *ATLGrayColor(void);
 
-UIColor *ATLLightGrayColor();
+UIColor *ATLLightGrayColor(void);
 
-UIColor *ATLAddressBarGray();
+UIColor *ATLAddressBarGray(void);
 
-UIColor *ATLRedColor();
+UIColor *ATLRedColor(void);
 
 UIFont *ATLLightFont(CGFloat size);
 

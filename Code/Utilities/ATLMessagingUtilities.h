@@ -56,9 +56,9 @@ extern NSString *const ATLLocationLongitudeKey;
 // @name Max Cell Dimensions
 //--------------------------
 
-CGFloat ATLMaxCellWidth();
+CGFloat ATLMaxCellWidth(void);
 
-CGFloat ATLMaxCellHeight();
+CGFloat ATLMaxCellHeight(void);
 
 //----------------------
 // @name Image Utilities

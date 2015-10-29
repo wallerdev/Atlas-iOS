@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ATLConstants.h"
 
 NSString *const ATLConversationName = @"ATLConversationName";
 

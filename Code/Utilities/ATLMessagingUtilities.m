@@ -58,7 +58,7 @@ CGFloat ATLMaxCellHeight()
 
 #pragma mark - Private Image Utilities
 
-CGSize ATLSizeProportionallyConstrainedToSize(CGSize nativeSize, CGSize maxSize)
+static CGSize ATLSizeProportionallyConstrainedToSize(CGSize nativeSize, CGSize maxSize)
 {
     if (nativeSize.width < maxSize.width && nativeSize.height < maxSize.height) return nativeSize;
     CGSize itemSize;
@@ -72,14 +72,14 @@ CGSize ATLSizeProportionallyConstrainedToSize(CGSize nativeSize, CGSize maxSize)
     return itemSize;
 }
 
-UIImage *ATLAdjustOrientationForImage(UIImage *originalImage)
-{
-    UIGraphicsBeginImageContextWithOptions(originalImage.size, NO, originalImage.scale);
-    [originalImage drawInRect:(CGRect){0, 0, originalImage.size}];
-    UIImage *fixedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return fixedImage;
-}
+//static UIImage *ATLAdjustOrientationForImage(UIImage *originalImage)
+//{
+//    UIGraphicsBeginImageContextWithOptions(originalImage.size, NO, originalImage.scale);
+//    [originalImage drawInRect:(CGRect){0, 0, originalImage.size}];
+//    UIImage *fixedImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return fixedImage;
+//}
 
 #pragma mark - Image Utilities
 
@@ -139,17 +139,17 @@ CGFloat ATLDegreeToRadians(CGFloat degrees)
 
 #pragma mark - Private Message Part Helpers
 
-CGSize  ATLSizeFromOriginalSizeWithConstraint(CGSize originalSize, CGFloat constraint)
-{
-    if (originalSize.height > constraint && (originalSize.height > originalSize.width)) {
-        CGFloat heightRatio = constraint / originalSize.height;
-        return CGSizeMake(originalSize.width * heightRatio, constraint);
-    } else if (originalSize.width > constraint) {
-        CGFloat widthRatio = constraint / originalSize.width;
-        return CGSizeMake(constraint, originalSize.height * widthRatio);
-    }
-    return originalSize;
-}
+//static CGSize  ATLSizeFromOriginalSizeWithConstraint(CGSize originalSize, CGFloat constraint)
+//{
+//    if (originalSize.height > constraint && (originalSize.height > originalSize.width)) {
+//        CGFloat heightRatio = constraint / originalSize.height;
+//        return CGSizeMake(originalSize.width * heightRatio, constraint);
+//    } else if (originalSize.width > constraint) {
+//        CGFloat widthRatio = constraint / originalSize.width;
+//        return CGSizeMake(constraint, originalSize.height * widthRatio);
+//    }
+//    return originalSize;
+//}
 
 #pragma mark - Message Utilities
 
