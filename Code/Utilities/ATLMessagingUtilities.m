@@ -303,19 +303,20 @@ NSArray *ATLTextCheckingResultsForText(NSString *text, NSTextCheckingType linkTy
 
 NSBundle *ATLResourcesBundle(void)
 {
-    NSBundle *bundlePath = [NSBundle bundleWithIdentifier:@"org.cocoapods.Atlas"];
-    NSString *path = [bundlePath pathForResource:@"AtlasResource" ofType:@"bundle"];
-    NSBundle *resourcesBundle = [NSBundle bundleWithPath:path];
-    if (resourcesBundle) {
-        return resourcesBundle;
-    }
-    NSString *resourcesBundlePath = [[NSBundle mainBundle] pathForResource:@"AtlasResource" ofType:@"bundle"];
-    if (resourcesBundlePath) {
-        return [NSBundle bundleWithPath:resourcesBundlePath];
-    } else {
-        NSBundle *parentBundle = [NSBundle bundleForClass:[ATLMessageCollectionViewCell class]];
-        NSBundle *resourcesBundle = [NSBundle bundleWithPath:[parentBundle pathForResource:@"AtlasResource" ofType:@"bundle"]];
-        if (!resourcesBundle) [NSException raise:NSInternalInconsistencyException format:@"Failed to locate `resources.bundle` in %@", resourcesBundle];
-        return resourcesBundle;
-    }
+//    NSBundle *bundlePath = [NSBundle bundleWithIdentifier:@"org.cocoapods.Atlas"];
+//    NSString *path = [bundlePath pathForResource:@"AtlasResource" ofType:@"bundle"];
+//    NSBundle *resourcesBundle = [NSBundle bundleWithPath:path];
+//    if (resourcesBundle) {
+//        return resourcesBundle;
+//    }
+//    NSString *resourcesBundlePath = [[NSBundle mainBundle] pathForResource:@"AtlasResource" ofType:@"bundle"];
+//    if (resourcesBundlePath) {
+//        return [NSBundle bundleWithPath:resourcesBundlePath];
+//    } else {
+//        NSBundle *parentBundle = [NSBundle bundleForClass:[ATLMessageCollectionViewCell class]];
+//        NSBundle *resourcesBundle = [NSBundle bundleWithPath:[parentBundle pathForResource:@"AtlasResource" ofType:@"bundle"]];
+//        if (!resourcesBundle) [NSException raise:NSInternalInconsistencyException format:@"Failed to locate `resources.bundle` in %@", resourcesBundle];
+//        return resourcesBundle;
+//    }
+    return nil;
 }
